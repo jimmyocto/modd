@@ -1,0 +1,19 @@
+language: go
+
+go:
+    - 1.10.x
+
+os:
+    - linux
+    - osx
+
+install:
+    - go get -t -v ./...
+    - go install ./cmd/modd
+
+script:
+    - go test -v -race ./...
+
+notifications:
+    email:
+        - aldo@corte.si
